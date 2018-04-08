@@ -44,6 +44,8 @@ export default {
     togglePlay () {
       if (!this.playing) {
         this.song.play()
+      } else {
+        this.song.stop()
       }
       this.playing = !this.playing
     }
