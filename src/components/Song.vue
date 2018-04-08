@@ -11,27 +11,63 @@
 </template>
 
 <script>
-
+import blackswan from 'blackswan-js'
 
 export default {
-  beforeCreate () {
+  created () {
+    if (!this.timeSignature ||
+      this.timeSignature.length !== 2 ||
+      this.timeSignature.filter(num => typeof num !== 'number').length !== 0) {
+        throw new Error(
+          `Invalid time signature. Expected an array of format [4, 4]. Instead received: ${this.timeSignature}`
+        )
+      }
 
+    if (this.tempo <= 0) {
+      throw new Error(`Invalid tempo. Expected a tempo above 0 bpm. Instead received: ${this.tempo}`)
+    }
+
+    this.song = blackswan.song(this.title)
+    this.song.setTempo(this.tempo)
+    this.song.setTimeSignature(...this.timeSignature)
   },
   data () {
     return {
-      playing: false
+      playing: false,
+      song: null
     }
   },
   methods: {
+    registerMeasure (measure, content) {
+      this.song.at(measure).plays(content)
+    },
     togglePlay () {
+      if (!this.playing) {
+        this.song.play()
+      }
       this.playing = !this.playing
     }
   },
   props: {
+    tempo: {
+      required: false,
+      default: 120,
+      type: Number
+    },
+    timeSignature: {
+      required: false,
+      default: () => [4, 4],
+      type: Array
+    },
     title: {
       required: false,
       default: 'Untitled',
       type: String
+    }
+  },
+  provide () {
+    return {
+      registerMeasure: this.registerMeasure
     }
   }
 }
@@ -69,7 +105,7 @@ html, body {
 
 $triangle-hypotenuse: 0.7em;
 $triangle-side: 1em;
-$transition-speed: 200ms;
+$transition-speed: 300ms;
 
 .play-control {
   background-color: transparent;
@@ -80,21 +116,19 @@ $transition-speed: 200ms;
   cursor: pointer;
   display: block;
   transition:
+    border-bottom-width $transition-speed ease-out,
     border-left-width $transition-speed,
     border-right-width $transition-speed,
-    border-top-width $transition-speed,
-    height $transition-speed;
+    border-top-width $transition-speed ease-out,
+    height $transition-speed ease-out;
   height: 0;
   width: 0;
 }
 
 .play-control.stop {
   border-bottom-width: 0;
-  border-left-width: 1em;
-  border-right-width: 0;
   border-top-width: 0;
   height: 1em;
-  width: 0;
 }
 
 .title {
