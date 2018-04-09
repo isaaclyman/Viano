@@ -1,6 +1,6 @@
 {
   "name": "viano",
-  "main": "dist/plugin.js",
+  "main": "docs/plugin.js",
   "version": "0.0.2",
   "private": true,
   "scripts": {
