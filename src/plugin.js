@@ -10,7 +10,7 @@ const components = {
 }
 
 const viano = {
-  install (Vue, options) {
+  install (Vue) {
     for (const comp in components) {
       Vue.component(comp, components[comp])
     }
