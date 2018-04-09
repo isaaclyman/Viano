@@ -1,6 +1,6 @@
 # Viano
 
-A library that lets you write songs using Vue components.
+A toy that lets you write songs using Vue components.
 
 Targets the Web Audio API. Most compatible with up-to-date Chrome.
 
@@ -10,9 +10,13 @@ Uses [blackswan.js](https://github.com/isaaclyman/blackswan-js).
 
 This is not a great music composition tool, but it is a fun toy. Your songs will sound like an '80s ringtone played on a  miscellaneous woodwind. Oh well.
 
-This is also a proof-of-concept for using Vue component markup as a tool for writing declarative code.
+This is also a proof-of-concept for using Vue component markup as a tool for writing declarative code in a domain-specific language.
 
-Do not use this library in mission-critical production code.
+Probably don't use this in production code.
+
+## Installation
+
+Viano isn't published on NPM and isn't set up for inclusion in other projects. To play with it: clone the repository, `npm install`, `npm run serve`. App.vue currently includes the "La Cucaracha" player, but you can add other players for your own songs (PRs always welcome).
 
 ## Usage
 
