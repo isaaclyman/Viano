@@ -13,7 +13,7 @@ const fractionStringToNum = function (str) {
 
 export default {
   created () {
-    let notesArr;
+    let notesArr
 
     if (typeof this.notes === 'string') {
       notesArr = this.notes.split(' ')
