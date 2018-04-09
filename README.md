@@ -16,7 +16,7 @@ Probably don't use this in production code.
 
 ## Installation
 
-Viano isn't published on NPM and isn't set up for inclusion in other projects. To play with it: clone the repository, `npm install`, `npm run serve`. App.vue currently includes the "La Cucaracha" player, but you can add other players for your own songs (PRs always welcome).
+Viano isn't published on NPM and isn't set up for inclusion in other projects. To play with it: clone the repository, `npm install`, `npm run serve`. src/Demo.vue currently includes the "La Cucaracha" player, but you can add other players for your own songs (PRs always welcome).
 
 ## Usage
 
@@ -99,3 +99,7 @@ Attributes:
 
 - `notes`: (required) a string ("c4 e4 g4") or array (['c4', 'e4', 'g4']).
 - `repeat`, `styles`, and `value`: see the attributes of the same name on `<Note>`.
+
+## Contributing
+
+There are lots of opportunities to contribute in this repository. You can submit a PR adding a new song to src/Demo.vue, 
