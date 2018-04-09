@@ -2,11 +2,11 @@
   <Song title="La cucaracha" :tempo="200" :time-signature="[4, 4]">
     <Part :measure="0">
       <Sequence>
-        <Note name="c4" value="1/8" :repeat="3">          La cuca
-        </Note><Note name="f4" value="3/8">               ra
+        <Note name="c4" value="1/8" :repeat="3">          La cuca-
+        </Note><Note name="f4" value="3/8">               ra-
         </Note><Note name="a4" value="1/4">               cha
-        </Note><Note name="c4" value="1/8" :repeat="3">   La cuca
-        </Note><Note name="f4" value="3/8">               ra
+        </Note><Note name="c4" value="1/8" :repeat="3">   La cuca-
+        </Note><Note name="f4" value="3/8">               ra-
         </Note><Note name="a4" value="1/4">               cha
         </Note><Rest value="3/8"></Rest>
         <Note name="f4" value="1/4">                      ya
