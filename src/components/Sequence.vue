@@ -15,24 +15,24 @@ export default {
   },
   inject: ['registerSequence'],
   methods: {
-    registerChord (chord) {
-      this.toRegister.push(chord)
+    registerChord (chordFn) {
+      this.toRegister.push(chordFn)
     },
-    registerNote (note) {
-      this.toRegister.push(note)
+    registerNote (noteFn) {
+      this.toRegister.push(noteFn)
     },
-    registerRest (rest) {
-      this.toRegister.push(rest)
+    registerRest (restFn) {
+      this.toRegister.push(restFn)
     }
   },
   mounted () {
-    const fullSequence = this.toRegister.slice()
+    const fullSequenceFns = this.toRegister.slice()
     if (this.repeat) {
-      for (let i = 0; i < this.repeat; i++) {
-        fullSequence.push.apply(fullSequence, this.toRegister)
+      for (let i = 1; i < this.repeat; i++) {
+        fullSequenceFns.push.apply(fullSequenceFns, this.toRegister)
       }
     }
-    this.registerSequence(blackswan.sequence(fullSequence))
+    this.registerSequence(() => blackswan.sequence(fullSequenceFns.map(fn => fn())))
   },
   props: {
     repeat: {

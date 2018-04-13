@@ -33,7 +33,7 @@ export default {
   inject: ['registerNote'],
   mounted () {
     for (let i = 0; i < this.repeat; i++) {
-      this.registerNote(blackswan.note(this.name, this.noteValue, ...this.styles))
+      this.registerNote(() => blackswan.note(this.name, this.noteValue, ...this.styles))
     }
   },
   props: {

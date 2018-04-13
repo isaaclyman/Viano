@@ -92,6 +92,7 @@ html, body {
   background-color: #EEE;
   display: flex;
   height: 3em;
+  margin: 1px;
   width: 15em;
 }
 

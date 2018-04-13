@@ -51,7 +51,7 @@ export default {
   inject: ['registerChord'],
   mounted () {
     for (let i = 0; i < this.repeat; i++) {
-      this.registerChord(blackswan.chord(this.chordNotes, this.noteValue, ...this.styles))
+      this.registerChord(() => blackswan.chord(this.chordNotes, this.noteValue, ...this.styles))
     }
   },
   props: {

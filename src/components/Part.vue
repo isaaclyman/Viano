@@ -18,14 +18,14 @@ export default {
   },
   inject: ['registerMeasure'],
   methods: {
-    registerNote (note) {
-      this.toRegister.push(note)
+    registerNote (noteFn) {
+      this.toRegister.push(noteFn())
     },
-    registerSequence (sequence) {
-      this.toRegister.push(sequence)
+    registerSequence (sequenceFn) {
+      this.toRegister.push(sequenceFn())
     },
-    registerChord (chord) {
-      this.toRegister.push(chord)
+    registerChord (chordFn) {
+      this.toRegister.push(chordFn())
     }
   },
   mounted () {

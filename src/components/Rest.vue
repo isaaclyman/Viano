@@ -28,7 +28,7 @@ export default {
   },
   inject: ['registerRest'],
   mounted () {
-    this.registerRest(blackswan.rest(this.noteValue))
+    this.registerRest(() => blackswan.rest(this.noteValue))
   },
   props: {
     value: {
