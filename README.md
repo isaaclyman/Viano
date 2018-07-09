@@ -111,3 +111,5 @@ There are lots of opportunities to contribute in this repository. You can submit
 If this is your first open-source PR, let me know and I'll try to be extra helpful.
 
 If you know your way around the Web Audio API or synthesizers in general, you're invited to contribute to [blackswan.js](https://github.com/isaaclyman/blackswan-js).
+
+Thanks to [Mirza Zulfan](https://github.com/mirzazulfan) for creating the project logo.
