@@ -1,3 +1,7 @@
+<h1 align=center>
+<img src="logo/512 horizontal.svg" width=40%>
+</h1>
+
 # Viano
 
 A toy that lets you write songs using Vue components.
